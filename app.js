@@ -1,3 +1,5 @@
+const cartButton = document.getElementById("cart-value")
+
 var items = {
     book1:["This was our pact",7,49],
     book2:["The famous five",4,59],
@@ -19,6 +21,7 @@ var cart = []
 var totalItem = new Object
 var dollar = 0
 var cent = 0
+var numberOfItem = 0
 
 document.querySelectorAll(".button").forEach((item)=>{
     item.addEventListener("click",(e)=>{
@@ -37,6 +40,8 @@ document.querySelectorAll(".button").forEach((item)=>{
             dollar += round
             cent = cent%100
         }
+        numberOfItem += 1
+        cartButton.innerText = numberOfItem
     })})
 
 document.querySelector("#cart").addEventListener("click",()=>{
